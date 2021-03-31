@@ -1,7 +1,8 @@
 <template>
   <div>
-    <h1>Build</h1>
-    <p>TODO</p>
+    <md-button class="md-raised">Input</md-button>
+    <md-button class="md-raised">Select</md-button>
+    <md-button class="md-raised">Textarea</md-button>
   </div>
 </template>
 
