@@ -1,5 +1,5 @@
-import About from "@/components/About.vue"
-import Build from "@/components/Build.vue"
+import About from '@/components/About.vue'
+import Build from '@/components/Build.vue'
 
 const routes = [
   {
