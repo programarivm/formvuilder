@@ -5,6 +5,7 @@ import App from './App.vue'
 import 'vue-material/dist/vue-material.min.css'
 import 'vue-material/dist/theme/default.css'
 import routes from "./routes/routes"
+import store from './store/store.js'
 
 const router = new VueRouter({
   routes,
@@ -19,4 +20,5 @@ Vue.config.productionTip = false
 new Vue({
   render: h => h(App),
   router,
+  store
 }).$mount('#app')

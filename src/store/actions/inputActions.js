@@ -1,4 +1,4 @@
-import inputActionTypes from 'constants/inputActionTypes'
+import inputActionTypes from '../constants/inputActionTypes'
 
 export const add = ({commit}, payload) => {
   commit(inputActionTypes.ADD, payload)
@@ -18,8 +18,4 @@ export const del = ({commit}, payload) => {
 
 export const set = ({commit}, payload) => {
   commit(inputActionTypes.SET, payload)
-}
-
-export const add = ({commit}, payload) => {
-  commit(inputActionTypes.ADD, payload)
 }
