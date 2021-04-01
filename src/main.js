@@ -5,7 +5,7 @@ import App from './App.vue'
 import 'vue-material/dist/vue-material.min.css'
 import 'vue-material/dist/theme/default.css'
 import routes from "./routes/routes"
-import store from './store/store.js'
+import store from './store'
 
 const router = new VueRouter({
   routes,
