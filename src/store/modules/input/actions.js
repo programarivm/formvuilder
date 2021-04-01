@@ -1,4 +1,4 @@
-import inputActionTypes from '@/store/modules/input/constants'
+import inputActionTypes from './constants'
 
 export const add = ({commit}, payload) => {
   commit(inputActionTypes.ADD, payload)
