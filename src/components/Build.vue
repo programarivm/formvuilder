@@ -9,7 +9,6 @@
 
 <script>
 import InputDialog from './InputDialog.vue'
-import inputActionTypes from '@/store/modules/input/constants'
 
 export default {
   name: 'Build',

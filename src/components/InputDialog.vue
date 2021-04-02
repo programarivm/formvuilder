@@ -1,6 +1,6 @@
 <template>
   <div>
-    <md-dialog :md-active.sync="showDialog">
+    <md-dialog :md-active.sync="$store.state.input.open">
       <md-dialog-title>Preferences</md-dialog-title>
 
       <md-tabs md-dynamic-height>
@@ -25,21 +25,20 @@
       </md-tabs>
 
       <md-dialog-actions>
-        <md-button class="md-primary" @click="showDialog = false">Close</md-button>
-        <md-button class="md-primary" @click="showDialog = false">Save</md-button>
+        <md-button class="md-primary" @click="cancelInput()">Close</md-button>
       </md-dialog-actions>
     </md-dialog>
-
-    <md-button class="md-primary md-raised" @click="showDialog = true">Show Dialog</md-button>
   </div>
 </template>
 
 <script>
   export default {
     name: 'InputDialog',
-    data: () => ({
-      showDialog: false
-    })
+    methods: {
+      cancelInput () {
+        this.$store.dispatch('cancelInput')
+      }
+    }
   }
 </script>
 
