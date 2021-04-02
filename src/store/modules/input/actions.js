@@ -1,21 +1,21 @@
-import inputActionTypes from './constants'
+import actionTypes from './constants'
 
-export const add = ({commit}, payload) => {
-  commit(inputActionTypes.ADD, payload)
+export const addInput = ({commit}, payload) => {
+  commit(actionTypes.ADD, payload)
 }
 
-export const cancel = () => {
-  commit(inputActionTypes.CLOSE_ADD_DIALOG)
+export const cancelInput = ({commit}) => {
+  commit(actionTypes.CLOSE_ADD_DIALOG)
 }
 
-export const click = () => {
-  commit(inputActionTypes.OPEN_ADD_DIALOG)
+export const clickInput = ({commit}) => {
+  commit(actionTypes.OPEN_ADD_DIALOG)
 }
 
-export const del = ({commit}, payload) => {
-  commit(inputActionTypes.DELETE, payload)
+export const delInput = ({commit}, payload) => {
+  commit(actionTypes.DELETE, payload)
 }
 
-export const set = ({commit}, payload) => {
-  commit(inputActionTypes.SET, payload)
+export const setInput = ({commit}, payload) => {
+  commit(actionTypes.SET, payload)
 }

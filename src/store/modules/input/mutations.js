@@ -1,9 +1,7 @@
-import inputActionTypes from './constants'
-
-export const inputActionTypes.CLOSE_ADD_DIALOG = (state) => {
+export const CLOSE_ADD_DIALOG_INPUT = (state) => {
   state.open = false
 }
 
-export const inputActionTypes.OPEN_ADD_DIALOG = (state) => {
+export const OPEN_ADD_DIALOG_INPUT = (state) => {
   state.open = true
 }

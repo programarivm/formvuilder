@@ -1,12 +1,9 @@
 import state from './state'
-import { add as addInput, cancel as cancelInput } from './actions'
+import * as actions from './actions'
+import * as mutations from './mutations'
 
 export default {
   state,
-  mutations: {},
-  getters: {},
-  actions: {
-    addInput,
-    cancelInput
-  }
+  mutations,
+  actions
 }

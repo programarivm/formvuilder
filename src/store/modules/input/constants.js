@@ -1,4 +1,4 @@
-const inputActionTypes = {
+const actionTypes = {
   ADD: 'ADD_INPUT',
   CLOSE_ADD_DIALOG: 'CLOSE_ADD_DIALOG_INPUT',
   DELETE: 'DELETE_INPUT',
@@ -6,4 +6,4 @@ const inputActionTypes = {
   SET: 'SET_INPUT'
 }
 
-export default inputActionTypes
+export default actionTypes
