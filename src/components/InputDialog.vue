@@ -3,7 +3,7 @@
     <md-dialog :md-active.sync="$store.state.input.open">
       <md-dialog-title>Input</md-dialog-title>
       <form novalidate class="md-layout" @submit.prevent="validateInput">
-        <md-card class="md-layout-item md-size-50 md-small-size-100">
+        <md-card class="md-layout-item md-size-100 md-small-size-100">
           <md-card-content>
             <div class="md-layout md-gutter">
               <div class="md-layout-item md-small-size-100">
@@ -43,14 +43,11 @@
           <md-progress-bar md-mode="indeterminate" v-if="sending" />
           <md-card-actions>
             <md-button type="submit" class="md-primary" :disabled="sending">Add</md-button>
+            <md-button class="md-primary" @click="cancelInput()">Cancel</md-button>
           </md-card-actions>
         </md-card>
         <md-snackbar :md-active.sync="inputSaved">The input {{ lastInput }} was saved with success!</md-snackbar>
       </form>
-      <md-dialog-actions>
-        <md-button class="md-primary" @click="addInput()">Add</md-button>
-        <md-button class="md-primary" @click="cancelInput()">Cancel</md-button>
-      </md-dialog-actions>
     </md-dialog>
   </div>
 </template>
@@ -91,15 +88,14 @@
     },
     methods: {
       addInput () {
-        console.log('foo')
-        // this.$store.dispatch('cancelInput')
+        // TODO
+        // this.$store.dispatch('addInput')
       },
       cancelInput () {
         this.$store.dispatch('cancelInput')
       },
       getValidationClass (fieldName) {
         const field = this.$v.form[fieldName]
-
         if (field) {
           return {
             'md-invalid': field.$invalid && field.$dirty
@@ -114,7 +110,6 @@
       },
       saveInput () {
         this.sending = true
-
         // Instead of this timeout, here you can call your API
         window.setTimeout(() => {
           this.lastInput = `${this.form.label} ${this.form.placeholder}`
@@ -125,7 +120,6 @@
       },
       validateInput () {
         this.$v.$touch()
-
         if (!this.$v.$invalid) {
           this.saveInput()
         }
