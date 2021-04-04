@@ -88,8 +88,11 @@
     },
     methods: {
       addInput () {
-        // TODO
-        // this.$store.dispatch('addInput')
+        this.$store.dispatch('addInput', {
+          type: this.form.type,
+          label: this.form.label,
+          placeholder: this.form.placeholder
+        })
       },
       cancelInput () {
         this.$store.dispatch('cancelInput')
@@ -108,20 +111,11 @@
         this.form.placeholder = null
         this.form.type = null
       },
-      saveInput () {
-        this.sending = true
-        // Instead of this timeout, here you can call your API
-        window.setTimeout(() => {
-          this.lastInput = `${this.form.label} ${this.form.placeholder}`
-          this.inputSaved = true
-          this.sending = false
-          this.clearForm()
-        }, 1500)
-      },
       validateInput () {
         this.$v.$touch()
         if (!this.$v.$invalid) {
-          this.saveInput()
+          this.addInput()
+          this.sending = false
         }
       }
     }
