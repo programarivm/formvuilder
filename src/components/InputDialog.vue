@@ -93,9 +93,11 @@
           label: this.form.label,
           placeholder: this.form.placeholder
         })
+        this.clearForm()
       },
       cancelInput () {
         this.$store.dispatch('cancelInput')
+        this.clearForm()
       },
       getValidationClass (fieldName) {
         const field = this.$v.form[fieldName]
